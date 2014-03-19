@@ -1,0 +1,61 @@
+// joy demo
+include "lib/decorators.tis";
+include "lib/log.tis";
+
+@change @on "#move-v, #move-h" :: move_cross();
+
+@change @on "#move-r" :: move_angle();
+			
+function move_cross() {
+	var mx = $(#move-h).value,
+			my = $(#move-v).value;
+	
+	// bounding rectangle
+	var (x,y,w,h) = $(#square).box(#rectw, #inner, #view);
+	
+	// translate coords
+	var px = mx*w/100 + x, py = my*h/100 + y;
+	
+	var img = $(#cross);
+	(w,h) = img.box(#dimension, #inner);
+	img.move(px - w/2, py - w/2);
+}
+
+function move_angle() {
+	var angle = $(#move-r).value;
+	
+	var img = $(#angle);
+	img.style["transform"] = String.printf("rotate(%ddeg)", angle);
+
+	// bounding rectangle
+	var (x,y,w,h) = $(#circle).box(#rectw, #inner, #view);
+	var cx = x + w/2, cy = y + h/2;
+	var radius = w/2 - 10;
+	
+	// sin(a) = y/r  y = sin(a)*r
+	// cos(a) = x/r  x = cos(a)*r
+	
+	angle = (90+angle) * Math.PI / 180;
+
+	var px = Math.cos(angle) * radius,
+			py = Math.sin(angle) * radius;
+
+	(w,h) = img.box(#dimension, #inner);
+	img.move(px.toInteger() + cx - w/2, py.toInteger() + cy - h/2);
+}
+
+
+$(#circle > .area).paintOutline = function(dc) {
+	var area = $(#circle > .area);
+	var (x,y,w,h) = area.box(#rectw, #inner, #view);
+	var cx = x + w/2, cy = y + h/2;
+	var radius = w/2 - 10;
+	dc.save();
+	dc.lineColor(color(80,139,106));
+	dc.lineWidth(2);
+	// dc.arc(40,15,radius,radius,0,360);
+	dc.restore();
+	return false;
+}
+
+

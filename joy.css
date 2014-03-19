@@ -1,0 +1,157 @@
+/* misc */
+
+[frame] { outline: 1px solid orange; }
+[hidden]{ visibility: collapse; }
+
+
+/*******************************/
+body {
+	/* left-top, right-top, right-bottom, left-bottom */
+	background-color: rgb(86,86,86) rgb(86,86,86) rgb(60,60,60) rgb(60,60,60);
+	padding-right: 2px;
+}
+
+
+
+/* main sections */
+.header {
+	height: 80px;
+}
+.middle {
+	height: 100%%;
+	width: 100%;
+	background-color: #333333;
+	border: 1px solid black;
+	border-radius: 10px;
+	
+	vertical-align: middle;
+}
+.footer {
+	flow: horizontal;
+	height: 40%%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+
+
+/* header */
+#joylist {
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+
+
+/* footer */
+.footer > div[name="left"] {
+	margin-right: 30%;
+}
+.footer > div[name="right"] {
+	margin-left:  30%;
+}
+
+.action {
+	white-space: nowrap;
+}
+.action > button {
+	width: 1em;
+}
+
+
+
+/* middle */
+.middle > div {
+	//margin-left: 20%%;
+	text-align: center;
+	flow: horizontal;
+}
+
+div[name="manual"] {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+div[name="move"] {
+	border: 1px solid green;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+#square {
+	width:  250px;
+	height: 250px;
+	background-color: rgb(45,45,45);
+	border: 1px solid rgb(34,34,34);
+	overflow: hidden;
+}
+
+#square > .area {
+	width:  90%%;
+	height: 90%%;
+	margin: 10%% 10%%;
+	vertical-align: middle;
+	border: dashed 2px rgb(80,139,106);
+	overflow: hidden;
+}
+
+#cross {
+	position: absolute;
+	top:  calc(50%-12px);
+	left: calc(50%-12px);
+}
+
+
+#circle {
+	width: 250px;
+	height: 250px;
+	background-color: rgb(45,45,45);
+	border: 1px solid rgb(34,34,34);
+	border-radius: 50%;
+	overflow: hidden;
+}
+#circle > .area {
+	width:  90%%;
+	height: 90%%;
+	margin: 10%% 10%%;
+	border-radius: 50%;
+	border: 1px solid rgb(34,34,34);
+	vertical-align: middle;
+}
+
+#angle {
+	position: absolute;
+	top: 0;
+	left: calc(50%-13px);
+	transform: rotate(180deg);
+}
+
+
+#controls {
+	margin: 10px;
+	color: white;
+}
+#instructions {
+	color: white;
+}
+
+#arrows {
+	padding: 10px;
+}
+#arrow {
+	foreground-image: url(img/arrow-left.png);
+}
+#cross {
+	foreground-image: url(img/cross.png);
+}
+#jaw {
+	foreground-image: url(img/jaw.png);
+}
+#angle {
+	foreground-image: url(img/angle-down.png);
+}
+
+
+buttonxx {
+	background-image: none;
+	background-color: #336666 #336666 #669999 #669999;
+}

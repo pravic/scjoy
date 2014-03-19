@@ -1,0 +1,170 @@
+﻿<html>
+<head>
+	<title>joy demo</title>
+	<style>
+		@import url(joy.css);
+	</style>
+	<script type="text/tiscript" src="joy.tis"/>
+	<script type="text/tiscript">
+		
+	</script>
+	
+	<div id="patterns">
+		
+	</div>
+	
+	<div id="directions">
+		<span name="left">влево</span>
+		<span name="right">вправо</span>
+		<span name="up">вверх</span>
+		<span name="down">вниз</span>
+		<span name="clock">по часовой стрелке</span>
+		<span name="anticlock">против часовой стрелки</span>
+	</div>
+	
+</head>
+<body>
+
+	<div class="header">
+		<widget type="select-dropdown" id="joylist">
+			<option>Joystick 0: Microsoft</option>
+		</widget>
+	</div>
+	
+	<div class="middle">
+		<div>
+			
+			<!-- square calibration area -->
+			<div id="square">
+				<img id="cross"/>
+				<div class="area">
+				</div>
+			</div>
+			
+			<!-- calibration controls -->
+			<div name="manual">
+				<button>Калибровать</button>
+				<div id="arrows">
+					<img id="arrow"/>
+				</div>
+				<div id="instructions">Поверните джойстик <span name="direction">влево</span> до упора</div>
+				<div id="controls">
+					<div name="move">
+						<div>
+							<input type="vslider" value="50" max="100" buddy="move-v-label" id="move-v" title="Перемещение по вертикали" />
+							<span id="move-v-label"/>
+						</div>
+						<div>
+							<input type="hslider" value="50" max="100" buddy="move-h-label" id="move-h" title="Перемещение по горизонтали" />
+							<span id="move-h-label"/>
+						</div>
+					</div>
+					<div>
+						<input type="hslider" value="180" max="360" buddy="move-r-label" id="move-r" title="Поворот" />
+						<span id="move-r-label" />
+					</div>
+				</div>
+			</div>
+			
+			<!-- circle calibration area -->
+			<div id="circle">
+				<img id="angle"/>
+				<div class="area">
+					<img id="jaw"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer">
+		
+		<div name="left">
+			<div class="action" button="1">
+				<button>1</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="2">
+				<button>2</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="3">
+				<button>3</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="4">
+				<button>4</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="5">
+				<button>5</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+		</div>
+		
+		<div name="right">
+			<div class="action" button="6">
+				<button>6</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="7">
+				<button>7</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="8">
+				<button>8</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="9">
+				<button>9</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+			<div class="action" button="10">
+				<button>10</button>
+				<select>
+					<option>Действие 1</option>
+					<option>Действие 2</option>
+					<option>Действие 3</option>
+				</select>
+			</div>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
